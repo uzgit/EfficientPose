@@ -16,14 +16,5 @@ conda install -y tensorflow-gpu==1.15.0
 yes | pip install -r requirements.txt
 python setup.py build_ext --inplace
 
-# get dataset
-echo "Retrieving dataset..."
-pip3 install gdown
-gdown https://drive.google.com/uc?id=1BMHC9RFhNxqnKo06fVpHr9AGGe2S9zv-
-
-# extract dataset
-echo "Extracting dataset..."
-unzip -q dataset.zip
-
 # notify
 echo "Done!"
