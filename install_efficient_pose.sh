@@ -1,5 +1,6 @@
 # efficientpose
 echo "Installing EfficientPose..."
+conda remove -n EfficientPose --all -y
 conda create -n -y EfficientPose python==3.7
 conda activate EfficientPose
 conda install -y tensorflow-gpu==1.15.0
