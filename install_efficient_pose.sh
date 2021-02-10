@@ -1,11 +1,15 @@
 # efficientpose
 echo "Installing EfficientPose..."
 
+# conda
+conda init bash
+. ~/.bashrc
+
 echo "Removing possibly existing EfficientPose environment..."
 conda remove -n EfficientPose --all -y
 
 echo "Creating new EfficientPose environment..."
-conda create -n -y EfficientPose python==3.7
+conda create -n EfficientPose python==3.7 -y
 
 echo "Activating EfficientPose environment..."
 conda activate EfficientPose
@@ -18,6 +22,9 @@ yes | pip install -r requirements.txt
 
 echo "Building..."
 python setup.py build_ext --inplace
+
+echo "Detecting GPUs..."
+python detect_gpus.py
 
 # notify
 echo "Done!"
